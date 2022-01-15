@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BEES } from './mock-bees';
+//import { BEES } from './mock-bees';
 import { Bee } from './Bee';
 import { Observable, of } from 'rxjs';
 import { BeesComponent } from './bees/bees.component';
@@ -17,8 +17,7 @@ export class BeeService {
     this.beeArr.push(bee);
   }
 
-  getBees(): Observable<Bee[]> {
-    const bees = of(BEES)
-    return bees;
+  getBees() {
+    return this.beeArr;
   }
 }

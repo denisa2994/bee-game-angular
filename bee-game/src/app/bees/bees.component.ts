@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { findIndex } from 'rxjs';
 import { Bee } from '../Bee';
 import { BeeService } from '../bee.service';
 
@@ -18,8 +17,17 @@ export class BeesComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.beeService.addBeeToSwarm(15, 'Drone 9', 50, 9, 12, false);
-    this.beeService.getBees().subscribe((bees) => this.bees = bees);
+    this.beeService.addBeeToSwarm(1, 'Queen', 100, 1, 8, false);
+
+    for(let i = 1; i<=5; i++){
+      this.beeService.addBeeToSwarm(this.beeService.getBees().length+i, 'Worker ' + i, 75, 5, 10, false);
+    }
+
+    for(let j=1; j<=8; j++){
+      this.beeService.addBeeToSwarm(this.beeService.getBees().length+j, 'Drone ' + j, 50, 8, 12, false);
+    }
+    
+    this.bees = this.beeService.getBees();
     this.totalHP = this.calculateTotalHP();
   }
 
