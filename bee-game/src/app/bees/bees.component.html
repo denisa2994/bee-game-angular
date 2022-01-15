@@ -1,4 +1,6 @@
-<app-button class="hit-button" text="HIT!" (btnClick)="onHit()"></app-button>
+<div *ngIf = "!gameOver">
+
+  <app-button class="hit-button" text="HIT!" (btnClick) = "onHit()"></app-button>
 
 <table>
     <tr>
@@ -13,5 +15,13 @@
 
   <p>{{damageInfo}}</p>
 
-<!--<p *ngFor="let bee of bees">{{bee.name}} - {{bee.hp}} hp</p> -->
-<!-- <app-button class="hit-button" text="HIT!" (btnClick)="onHit()"></app-button> -->
+
+</div>
+
+<div *ngIf = "gameOver">
+
+  <h2>GAME IS OVER!</h2>
+  <p>Click the 'RESTART' button to replay</p>
+  <app-button text = "RESTART!" (btnClick) = "ngOnInit()" ></app-button>
+
+</div>

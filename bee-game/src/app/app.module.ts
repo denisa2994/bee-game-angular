@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { GameComponent } from './game/game.component';
 import { ButtonComponent } from './button/button.component';
 import { BeesComponent } from './bees/bees.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { BeesComponent } from './bees/bees.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,11 +12,14 @@ export class BeesComponent implements OnInit {
   bees: Bee[] = [];
   totalHP!: number;
   damageInfo: string = '';
+  gameOver: boolean = false;
 
   constructor(private beeService: BeeService) {
    }
 
   ngOnInit(): void {
+    this.damageInfo = '';
+    this.gameOver = false;
     this.beeService.addBeeToSwarm(1, 'Queen', 100, 1, 8, false);
 
     for(let i = 1; i<=5; i++){
@@ -68,6 +71,7 @@ export class BeesComponent implements OnInit {
         //When the Queen bee is dead the game is over. No need to check if all the bees are dead
         if(bee.name === "Queen" && bee.hp < 1){
           console.log("GAME OVER!");
+          this.gameOver = true;
 
         }
 

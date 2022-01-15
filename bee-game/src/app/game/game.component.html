@@ -1,5 +1,8 @@
-<span>Please input a name</span><br>
-<input type="text" id="pName" name="pName">
-<app-button class="start-button" text="START GAME" (btnClick)="startGame()"></app-button> <br>
+<div *ngIf = "!gameStarted">
+    <span>Please input a name</span><br>
+    <input type="text" name="playerName" [(ngModel)] = "playerName">
+    <app-button class="start-button" text="START GAME" (btnClick)="startGame()"></app-button> <br>
+</div>
 
+<h3 *ngIf = "gameStarted">{{playerName}}</h3>
 <app-bees *ngIf = "gameStarted"></app-bees>
