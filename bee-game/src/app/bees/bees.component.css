@@ -1,0 +1,17 @@
+.hit-button {
+    padding-top: 20px;
+    display: block;
+    height: 50px;
+    width: 25%;
+
+}
+table{
+    width: 25%;
+}
+
+table, th , td  {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+    text-align: center;
+  }

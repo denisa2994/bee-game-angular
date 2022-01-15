@@ -1,0 +1,17 @@
+<app-button class="hit-button" text="HIT!" (btnClick)="onHit()"></app-button>
+
+<table>
+    <tr>
+        <th>SWARM</th>
+        <th>TOTAL HP: {{totalHP}}</th>
+    </tr>
+    <tr *ngFor="let bee of bees">
+      <td *ngIf="!bee.isDead">{{ bee.name }}</td>
+      <td *ngIf="!bee.isDead">{{ bee.hp }} HP</td>
+    </tr>
+  </table>
+
+  <p>{{damageInfo}}</p>
+
+<!--<p *ngFor="let bee of bees">{{bee.name}} - {{bee.hp}} hp</p> -->
+<!-- <app-button class="hit-button" text="HIT!" (btnClick)="onHit()"></app-button> -->

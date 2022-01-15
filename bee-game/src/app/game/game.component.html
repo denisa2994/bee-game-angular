@@ -1,0 +1,5 @@
+<span>Please input a name</span><br>
+<input type="text" id="pName" name="pName">
+<app-button class="start-button" text="START GAME" (btnClick)="startGame()"></app-button> <br>
+
+<app-bees *ngIf = "gameStarted"></app-bees>
